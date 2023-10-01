@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: backend
+  labels:
+    app: backend
 spec:
   containers:
   - name: mycontainer
@@ -11,3 +13,7 @@ spec:
       value: "asd"
     - name: DATABASE_URL
       value: "postgres://test_k8s:OwOtBep9Frut@192.168.0.11:5432/test_k8s"
+    - name: DEBUG
+      value: "false"
+    - name: ALLOWED_HOSTS
+      value: "*"
