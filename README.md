@@ -35,11 +35,11 @@ $ docker-compose run web ./manage.py createsuperuser
 
 ## Работа с Kubernetes
 
-Для раскатки проекта в миникуб кластере необходимо выполнить следующие команды
-1. minikube start
-2. kubectl apply -f configmap.yaml
-3. kubectl apply -f deployment.yaml
-4. minikube service --all
-При изменении переменных окружения в configmap.yaml для вступлениях их в силу нужно выполнить следующие команды
-1. kubectl apply -f configmap.yaml
-2. kubectl rollout restart deployment django-deployment
+### Для раскатки проекта в миникуб кластере необходимо выполнить следующие команды
+1. `minikube start`
+2. `kubectl apply -f configmap.yaml`
+3. `kubectl apply -f deployment.yaml`
+4. `minikube service --all`
+### При изменении переменных окружения в configmap.yaml для вступлениях их в силу нужно выполнить следующие команды  
+1. `kubectl apply -f configmap.yaml`
+2. `kubectl rollout restart deployment django-deployment`
