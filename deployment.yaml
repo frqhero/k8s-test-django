@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+  labels: 
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: mycontainer
+        image: myapp:idk
+        env:
+        - name: SECRET_KEY
+          value: "asd"
+        - name: DATABASE_URL
+          value: "postgres://test_k8s:OwOtBep9Frut@192.168.0.108:5432/test_k8s"
+        - name: DEBUG
+          value: "false"
+        - name: ALLOWED_HOSTS
+          value: "*"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: django
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
