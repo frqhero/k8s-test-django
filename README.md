@@ -43,3 +43,8 @@ $ docker-compose run web ./manage.py createsuperuser
 ### При изменении переменных окружения в configmap.yaml для вступлениях их в силу нужно выполнить следующие команды  
 1. `kubectl apply -f configmap.yaml`
 2. `kubectl rollout restart deployment django-deployment`
+### Запуск ingress
+1. `kubectl apply -f ingress.yaml`
+2. `minikube addons enable ingress`
+3. `kubectl get ingress` полученный `ADDRESS` добавить в /etc/hosts замапив с желаемым псевдонимом
+4. Проверить доступность приложения в браузере
