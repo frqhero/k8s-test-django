@@ -1,14 +1,14 @@
-from python:3.9-slim-bullseye
+from python:3.9.6-slim-bullseye
 
 WORKDIR /code
 
 COPY requirements.txt /code/
 
-RUN apt update && apt install -y python3-pip                                  \
-    && pip3 install -r requirements.txt                                       \
-    && apt remove -y python3-pip                                              \
-    && apt autoremove --purge -y
+RUN python3 -V
+
+RUN pip3 install -r requirements.txt
     
 COPY . /code/
 
 CMD ./manage.py clearsessions
+# CMD sleep infinity
