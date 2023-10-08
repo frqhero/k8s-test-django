@@ -1,4 +1,4 @@
-from python:3.9.6-slim-bullseye
+FROM python:3.9.6-slim-bullseye
 
 WORKDIR /code
 
