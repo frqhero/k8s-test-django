@@ -48,3 +48,7 @@ $ docker-compose run web ./manage.py createsuperuser
 2. `minikube addons enable ingress`
 3. `kubectl get ingress` полученный `ADDRESS` добавить в /etc/hosts замапив с желаемым псевдонимом
 4. Проверить доступность приложения в браузере
+### Запуск cronjob
+1. `kubectl apply -f cronjob.yaml`
+#### For creation one time job from existing cronjob
+1. `kubectl create job --from=cronjob/clearsessions onejob`
