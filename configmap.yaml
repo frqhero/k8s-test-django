@@ -4,7 +4,8 @@ metadata:
   name: django-configmap
 data:
   SECRET_KEY: "asd"
-  DATABASE_URL: "postgres://test_k8s:OwOtBep9Frut@192.168.0.15:5432/test_k8s"
+  # DATABASE_URL: "postgres://test_k8s:OwOtBep9Frut@192.168.0.15:5432/test_k8s" 
   # DATABASE_URL: "postgres://test_k8s:OwOtBep9Frut@172.20.10.7:5432/test_k8s"
+  DATABASE_URL: "postgres://postgres:YC8Wa0PpJD@db-release-postgresql.default.svc.cluster.local:5432/postgres"
   DEBUG: "false"
   ALLOWED_HOSTS: "*"

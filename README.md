@@ -52,3 +52,11 @@ $ docker-compose run web ./manage.py createsuperuser
 1. `kubectl apply -f cronjob.yaml`
 #### For creation one time job from existing cronjob
 1. `kubectl create job --from=cronjob/clearsessions onejob`
+
+
+### Для запуска postgres с помощью helm chart
+1. Установить helm с помощью snap  
+`sudo snap install helm --classic`
+2. Запустить release of postgresql chart  
+`helm install my-release oci://registry-1.docker.io/bitnamicharts/postgresql`
+* При запуске в командной строке появляются инструкции для подключения к базе изнутри и снаружи кластера, запуска psql
