@@ -17,6 +17,10 @@ spec:
       containers:
       - name: mycontainer
         image: myapp:idk
+        resources:
+          limits:
+            cpu: "1"
+            memory: "512Mi"
         envFrom:
         - configMapRef:
             name: django-configmap
