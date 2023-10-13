@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mycontainer
-        image: myapp:idk
+        image: frqhero/myapp:78d2f68
         resources:
           limits:
             cpu: "1"
