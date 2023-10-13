@@ -12,7 +12,8 @@ spec:
         spec:
           containers:
           - name: clear-sessions-container
-            image: clear_sessions_image:0
+            image: myapp:idk
+            command: ["./manage.py", "clearsessions"]
             env:
             - name: SECRET_KEY
               valueFrom:
