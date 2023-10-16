@@ -60,3 +60,11 @@ $ docker-compose run web ./manage.py createsuperuser
 2. Запустить release of postgresql chart  
 `helm install my-release oci://registry-1.docker.io/bitnamicharts/postgresql`
 * При запуске в командной строке появляются инструкции для подключения к базе изнутри и снаружи кластера, запуска psql
+
+
+### Для запуска в кластере
+Подключится к кластере в kubectl
+Применить деплоймент из папки prod-kuber-manifest
+
+### Работающая версия сайта
+https://edu-evil-panini.sirius-k8s.dvmn.org/

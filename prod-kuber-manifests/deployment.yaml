@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+  labels: 
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: mycontainer
+        image: frqhero/myapp:78d2f68
+        envFrom:
+        - configMapRef:
+            name: django-configmap
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-service
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30331
+  type: NodePort
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: django-configmap
+data:
+  SECRET_KEY: "asd"
+  DATABASE_URL: "postgres://postgres:Eli1azwG1t@db-postgresql.default.svc.cluster.local:5432/postgres"
+  DEBUG: "true"
+  ALLOWED_HOSTS: "*"
