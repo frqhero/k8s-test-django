@@ -13,8 +13,8 @@ RUN apt-get update && \
     apt-get install wget postgresql-client --yes && \
     mkdir --parents ~/.postgresql && \
     wget "https://storage.yandexcloud.net/cloud-certs/CA.pem" \
-         --output-document ~/.postgresql/root.crt && \
-    chmod 0600 ~/.postgresql/root.crt
+         --output-document /code/root.crt && \
+    chmod 0600 /code/root.crt
 COPY unit_config.json /docker-entrypoint.d/
 COPY . /code/
 RUN SECRET_KEY=empty python manage.py collectstatic --noinput
