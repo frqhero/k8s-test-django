@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migration
+spec:
+  ttlSecondsAfterFinished: 30
+  template:
+    spec:
+      containers:
+      - name: migrate-container
+        image: clear_sessions_image:0
+        command: ["./manage.py",  "migrate"]
+        env:
+        - name: SECRET_KEY
+          valueFrom:
+            configMapKeyRef:
+              name: django-configmap
+              key: SECRET_KEY
+        - name: DATABASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: django-configmap
+              key: DATABASE_URL
+        imagePullPolicy: IfNotPresent
+      restartPolicy: OnFailure
