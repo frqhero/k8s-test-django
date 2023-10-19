@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
           - name: clear-sessions-container
-            image: frqhero/myapp:c43bba34
+            image: frqhero/myapp:0265a9e
             command: ["./manage.py", "clearsessions"]
             env:
             - name: SECRET_KEY

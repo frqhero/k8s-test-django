@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mycontainer
-        image: frqhero/myapp:c43bba34
+        image: frqhero/myapp:0265a9e
         envFrom:
         - configMapRef:
             name: django-configmap
@@ -45,6 +45,6 @@ metadata:
   name: django-configmap
 data:
   SECRET_KEY: "asd"
-  DATABASE_URL: "postgres://edu-evil-panini:ep1QuofecCant@rc1b-qitwkw0kwefnhast.mdb.yandexcloud.net:6432/postgres"
+  DATABASE_URL: "postgres://edu-evil-panini:ep1QuofecCant@rc1b-qitwkw0kwefnhast.mdb.yandexcloud.net:6432/edu-evil-panini?sslmode=require&sslrootcert=/root/.postgresql/root.crt&sslcert=/root/.postgresql/root.crt"
   DEBUG: "true"
   ALLOWED_HOSTS: "*"
