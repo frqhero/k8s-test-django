@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mycontainer
-        image: frqhero/myapp:0265a9e
+        image: frqhero/myapp:5958
         envFrom:
         - configMapRef:
             name: django-configmap

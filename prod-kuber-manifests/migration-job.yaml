@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: migrate-container
-        image: frqhero/myapp:0265a9e
+        image: frqhero/myapp:5958
         command: ["./manage.py",  "migrate"]
         env:
         - name: SECRET_KEY
