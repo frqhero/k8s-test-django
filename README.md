@@ -65,6 +65,7 @@ $ docker-compose run web ./manage.py createsuperuser
 ### Для запуска в кластере
 Подключится к кластере в kubectl
 Применить деплоймент из папки prod-kuber-manifest
+Так же из этой папки можно запустить cronjob и job
 
 ### Работающая версия сайта
 https://edu-evil-panini.sirius-k8s.dvmn.org/
